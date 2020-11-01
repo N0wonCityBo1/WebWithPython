@@ -13,9 +13,11 @@ def index(req):
 
     return render(req, "index.html", context=context)
 
+#세부사항 확인
 class PostDetailView(generic.DetailView):
     model = Post
 
+#글작성 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     fields = ["title", "title_image", "content", "category"]
